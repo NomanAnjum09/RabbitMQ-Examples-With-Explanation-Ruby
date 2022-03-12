@@ -1,0 +1,1 @@
+### We are saving messages so when can resend it to some other reciever if ine reciever dies. However the queue itself is not durable, which means if RabbitMQ is crashed we will lose all messages currently in queue. Toa avoid it we marks queus as durable, and mark message as persisten while publishing from Sender

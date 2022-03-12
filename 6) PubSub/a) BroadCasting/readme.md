@@ -1,0 +1,6 @@
+### We have observed that previous example sends a message to only one receiver to consume. That is good for alot of use cases like load balancers, multi processing, and task divisions. But there can be cases where a message should be sent to multiple recievers, lets say we have log maintainers on multiple servers, or multiple servers needs to know certain parameters at client. In that case previous examples won't work.
+
+### Using RabbitMQ we can publish messages to multiple receivers. For this we can set a channel to differnt types of publish subscribe strategies. In this example we use fanout strategy, which as name says publish a message to all subscibers. Sender doesn't create a queue it just creates a fanout channel. 
+
+### Reciever 
+Reciever subscribe to an exchange or a channel which is created by sender, and then each reciever maintain it's own queue where messages are stored. Receiver sends a message to all subscribers which is kept in queues of each receiver which recievers pull out and use.
